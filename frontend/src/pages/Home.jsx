@@ -1,7 +1,50 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+// Components
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import Card from "../components/Card";
 
 const Home = () => {
-  return <div></div>;
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/logements.json")
+      .then((res) => {
+        if (!res) {
+          console.log("Impossible de récupérer data");
+        } else {
+          return res.json();
+        }
+      })
+      .then((data) => {
+        setData(data);
+        setIsLoading(false);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log("Une erreur est survenue");
+      });
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <div className="container"></div>
+      {/*     {data.length > 0 &&
+        (isLoading ? (
+          <p>Chargement...</p>
+        ) : (
+          data.map((house) => {
+            return (
+             
+            );
+          })
+        ))} */}
+      <Footer />
+    </>
+  );
 };
 
 export default Home;
