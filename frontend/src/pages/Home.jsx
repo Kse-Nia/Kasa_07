@@ -21,7 +21,7 @@ const Home = () => {
       .then((data) => {
         setData(data);
         setIsLoading(false);
-        console.log(data);
+        //console.log(data);
       })
       .catch((err) => {
         console.log("Une erreur est survenue");
@@ -32,16 +32,15 @@ const Home = () => {
     <>
       <Navbar />
       <div className="container"></div>
-      {/*     {data.length > 0 &&
-        (isLoading ? (
-          <p>Chargement...</p>
-        ) : (
-          data.map((house) => {
-            return (
-             
-            );
-          })
-        ))} */}
+      {isLoading ? (
+        <p>Chargement...</p>
+      ) : (
+        <div className="container">
+          {data.map((house) => (
+            <Card key={house.id} {...house} />
+          ))}
+        </div>
+      )}
       <Footer />
     </>
   );

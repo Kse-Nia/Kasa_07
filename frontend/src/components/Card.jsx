@@ -1,10 +1,12 @@
 import React from "react";
 
-const Card = ({ house }) => {
+const Card = (props) => {
+  console.log(props);
+
   return (
     <div className="card">
-      <img className="card_image" src={house.cover} alt="house" />
-      <p className="card_title">{house.title}</p>
+      <img className="card_image" src={props.cover} alt="house" />
+      <p className="card_title">{props.title}</p>
     </div>
   );
 };
