@@ -1,21 +1,43 @@
 * {
   margin: 0;
   padding: 0;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  text-decoration: none;
+  list-style: none;
 }
 
 /* Header */
 .navbar {
   margin: 5% 5% 5%;
+  display: flex;
+  justify-content: space-between;
 }
 .navbar_logo {
-  max-width: 25vw;
+  max-width: 15vw;
   height: auto;
 }
 .navbar_logo-image {
   width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.navbar_links {
+  min-width: 20vw;
+}
+.navbar_links ul {
+  display: flex;
+  flex-direction: row;
+}
+.navbar_links li {
+  margin: 0 5% 0;
+}
+.navbar_links-link {
+  font-size: 24px;
+  color: #ff6060;
+}
+.navbar_links-link:focus {
+  border-bottom: 1px solid #ff6060;
 }
 
 /* Home */
@@ -39,29 +61,34 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 .card_title {
   max-width: 50%;
-  font-size: 18px;
+  font-size: 1.1em;
   font-weight: 500;
+  font-family: "Montserrat";
   margin: 5% 5% 0;
 }
+
 /* Footer */
 
-.footer_container {
+.footer {
   width: 100%;
-  height: 210px;
+  height: 30vh;
   background-color: #000000;
   color: white;
   font-size: 24px;
   font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  font-family: "Montserrat";
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.footer_container-logo {
+.footer-logo {
   margin-bottom: 2%;
 }
