@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo from "../assets/LOGO.svg";
 
@@ -8,7 +7,7 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar_logo">
-          <img src={Logo} className="navbar_logo-image" alt="logo" />
+          <img src={Logo} className="navbar_logo-image" alt="Kasa" />
         </div>
         <div className="navbar_links">
           <ul>
