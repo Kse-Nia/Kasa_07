@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 
 // Components
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Banner from "../components/Banner";
 import Card from "../components/Card";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -31,6 +32,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
+      <Banner />
       <div className="container"></div>
       {isLoading ? (
         <p>Chargement...</p>
