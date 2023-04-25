@@ -1,12 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useRouteError } from "react-router-dom";
 
 const ErrorPage = () => {
+  const error = useRouteError();
+
   return (
     <div className="error_container">
-      <p>404</p>
+      <p className="">404</p>
       <p>Oups ! La page que vous demandez n'existe oas</p>
-      <NavLink to="/">Retourner à la page d'accueil</NavLink>
+      <NavLink className="error-navlink" to="/">
+        Retourner à la page d'accueil
+      </NavLink>
     </div>
   );
 };
