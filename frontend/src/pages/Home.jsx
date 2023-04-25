@@ -6,9 +6,13 @@ import Banner from "../components/Banner";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 
+// Asset
+import BannerImage from "../assets/banner.png";
+
 const Home = () => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const text = "Chez vous, partout et ailleurs";
 
   useEffect(() => {
     fetch("/logements.json")
@@ -22,7 +26,6 @@ const Home = () => {
       .then((data) => {
         setData(data);
         setIsLoading(false);
-        //console.log(data);
       })
       .catch((err) => {
         console.log("Une erreur est survenue");
@@ -31,8 +34,7 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
-      <Banner />
+      <Banner picture={BannerImage} text={text} />
       <div className="container"></div>
       {isLoading ? (
         <p>Chargement...</p>
