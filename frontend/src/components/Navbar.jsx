@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/LOGO.svg";
 
 const Navbar = () => {
@@ -7,19 +7,21 @@ const Navbar = () => {
     <>
       <nav className="navbar">
         <div className="navbar_logo">
-          <img src={Logo} className="navbar_logo-image" alt="Kasa" />
+          <Link to="/">
+            <img src={Logo} className="navbar_logo-image" alt="Kasa" />
+          </Link>
         </div>
         <div className="navbar_links">
           <ul>
             <li>
-              <Link className="navbar_links-link" to="/">
+              <NavLink className="navbar_links-link" to="/">
                 Accueil
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link className="navbar_links-link" to="/about">
+              <NavLink className="navbar_links-link" to="/about">
                 A Propos
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
